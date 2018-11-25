@@ -14,23 +14,22 @@ def even_number_of_evens(numbers):
     
     if(numbers == []):
         return False
+        
+    # Adds a new variable called evens that will add an even number each time an even number is found
     else:
         evens = 0
         
+    # Iterates through all the numbers to check for even numbers
     for number in numbers:
         if(number % 2 == 0):
             evens += 1
-            
+          
+    #If there are no even numbers returns False
     if evens == 0:
         return False
-    elif(evens % 2 == 1):
-        return False
-    elif(evens % 2 == 0):
-        return True
-
-    
-            
-    
+    #If the number of even numbers is even returns True, if the number of even numbers is odd returns True
+    else:
+        return evens % 2 == 0
 
 
 assert even_number_of_evens([]) == False, "No numbers"
