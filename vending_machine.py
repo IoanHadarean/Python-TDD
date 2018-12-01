@@ -9,7 +9,7 @@ def get_change(amount):
         
     change = []
     for coin in [100, 50, 20, 10, 5, 2, 1]:
-        if coin <= amount:
+        while coin <= amount:
             amount -= coin
             change.append(coin)
             
@@ -26,6 +26,7 @@ test_are_equal(get_change(50),[50])
 test_are_equal(get_change(100),[100])
 test_are_equal(get_change(3),[2,1])
 test_are_equal(get_change(7),[5,2])
+test_are_equal(get_change(9), [5,2,2])
 
 print("All tests pass!")
 
