@@ -28,8 +28,20 @@ def test_is_in(collection, item):
     """
     assert item in collection, "{0} does not contain {1}".format(collection, item)
     
+def test_not_in(collection, item):
+    """
+    Check to ensure that a given collection does not contain a given value.
+    Raises AssertionError if the `item` is found in `collection`
+    `collection` is the collection in question
+    `item` is the thing that we want to check for
+    """
+    assert item not in collection, "{0} contains {1}".format(collection, item)
+    
+    
 #test_are_equal(number_of_evens([1,2,3,4,5]), 2) 
     
 #test_not_equal(number_of_evens([1,2,3,4,5]), 0)
 
-test_is_in(["fruit", "banana"], "apple")
+#test_is_in(["fruit", "banana"], "apple")
+
+test_not_in(["fruit", "banana"], "fruit")
