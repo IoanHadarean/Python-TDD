@@ -37,6 +37,9 @@ def test_not_in(collection, item):
     """
     assert item not in collection, "{0} contains {1}".format(collection, item)
     
+def test_between(lower_limit, upper_limit, actual):
+    assert lower_limit <= actual <= upper_limit, "{0} is not between {1} and {2}".format(actual, lower_limit, upper_limit)
+    
     
 #test_are_equal(number_of_evens([1,2,3,4,5]), 2) 
     
@@ -44,4 +47,6 @@ def test_not_in(collection, item):
 
 #test_is_in(["fruit", "banana"], "apple")
 
-test_not_in(["fruit", "banana"], "fruit")
+#test_not_in(["fruit", "banana"], "fruit")
+
+test_between(5, 9, 4)
