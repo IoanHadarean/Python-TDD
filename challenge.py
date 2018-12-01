@@ -7,7 +7,7 @@ eur_coins = {200:20,100:20,50:20,20:20,10:20,5:20,2:20,1:20}
 def get_change(amount, coins=eur_coins):
     
     change = []
-    for coin in sorted(coins.keys(), reverse = True) :
+    for coin in sorted(coins.keys(), reverse=True) :
         while coin <= amount and coins[coin] > 0:
             amount -= coin
             coins[coin] -= 1
@@ -31,8 +31,8 @@ test_are_equal(get_change(3),[2,1])
 test_are_equal(get_change(7),[5,2])
 test_are_equal(get_change(9), [5,2,2])
 test_are_equal(get_change(35, usd_coins),[25, 10])
-test_are_equal(get_change(4), {2:1,1:4})
-test_are_equal(get_change(4), {5:1,2:1,1:1})
+test_are_equal(get_change(4, {2:1,1:4}), [2,1,1])
+test_are_equal(get_change(4, {5:1,2:1,1:8}), [2,1,1])
 
 print("All tests pass!")
 
