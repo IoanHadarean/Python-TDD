@@ -1,12 +1,15 @@
 from byotest import *
 
-usd_coins = [100,50,25,10,5,1]
-eur_coins = [100,50,20,10,5,2,1]
+usd_coins = {100:20,50:20,25:20,10:20,5:20,1:20}
+eur_coins = {200:20,100:20,50:20,10:20,5:20,2:20,1:20}
 
-def get_change(amount, coins=eur_coins):
+
+def get_change(amount, coins):
+    for item in coins:
+        return item
     
     change = []
-    for coin in coins:
+    for coin in item:
         while coin <= amount:
             amount -= coin
             change.append(coin)
@@ -25,7 +28,7 @@ test_are_equal(get_change(100),[100])
 test_are_equal(get_change(3),[2,1])
 test_are_equal(get_change(7),[5,2])
 test_are_equal(get_change(9), [5,2,2])
-test_are_equal(get_change(35, usd_coins),[25, 10])
+test_are_equal(get_change(35, item),[25, 10])
 
 print("All tests pass!")
 
