@@ -1,6 +1,3 @@
-def number_of_evens(numbers):
-    return 0
-
 def test_are_equal(actual, expected):
     """
     Test that two values are equal. Raises AssertionError if both values are
